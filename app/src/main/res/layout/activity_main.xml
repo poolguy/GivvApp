@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.example.macbookpro.givvapp.controller.MainActivity"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonWrapper"
+        android:src="@drawable/givv_black"
+        />
+
+    <LinearLayout
+        android:id="@+id/buttonWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        >
+
+        <Button
+            android:id="@+id/employeeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            style="@style/loginButtonStyle"
+            android:text="Continue as Employee"/>
+
+        <Button
+            android:id="@+id/employerButton"
+            style="@style/loginButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Continue as Employer"/>
+
+        <Button
+            android:id="@+id/adminButton"
+            style="@style/loginButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Continue as Admin"/>
+    </LinearLayout>
+    <!--3dc0b3-->
+
+</RelativeLayout>
