@@ -19,7 +19,7 @@
         <activity android:name=".controller.employer.EmployerMainActivity" />
         <activity android:name=".controller.employee.EmployeeMainActivity" />
         <activity android:name=".controller.admin.AdminMainActivity" />
-        <activity android:name=".controller.login" />
+        <activity android:name=".controller.LoginActivity" />
         <activity android:name=".controller.SignupActivity"></activity>
     </application>
 
