@@ -22,8 +22,6 @@ import java.util.Date;
 
 public class AdminMainActivity extends GivvActivity {
 
-	private MenuItem addCompanyMenuItem;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -81,8 +79,7 @@ public class AdminMainActivity extends GivvActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.add_company_menu, menu);
-		addCompanyMenuItem = menu.findItem(R.id.add_company_menu).setEnabled(true);
-
+		menu.findItem(R.id.add_company_menu).setEnabled(true);
 		return true;
 	}
 

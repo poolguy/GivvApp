@@ -138,4 +138,10 @@
         <item name="android:textSize">20sp</item>
     </style>
 
+
+    <!-- Project list item styles -->
+    <style name="projectListItemImageView">
+        <item name="android:tint">@color/transparentBlack</item>
+    </style>
+
 </resources>
