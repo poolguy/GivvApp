@@ -29,6 +29,7 @@ public class EmployeeMainActivity extends GivvActivity {
 		List<Project> projects = new ArrayList<>();
 		projects.add(new Project(20000, 10000, "Project 1 Name", "Lorem ipsum", "Short description", R.drawable.peru_nutrition, null, null, false));
 		projects.add(new Project(20000, 10000, "Project 2 Name", "Lorem ipsum", "Short description", R.drawable.india_water_security, null, null, false));
+		projects.add(new Project(20000, 10000, "Project 3 Name", "Lorem ipsum", "Short description", R.drawable.atcq, null, null, false));
 //		projects.add(new Project(20000, 10000, "Project 3 Name", "Lorem ipsum", "Short description", null, null, null, false));
 
 

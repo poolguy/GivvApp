@@ -1,5 +1,6 @@
 package com.example.macbookpro.givvapp.controller;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -20,16 +21,23 @@ import android.widget.Toast;
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "SignupActivity";
 
-    EditText _nameText = (EditText) findViewById(R.id.input_name);
-    EditText _emailText = (EditText) findViewById(R.id.input_email) ;
-    EditText _passwordText = (EditText) findViewById(R.id.input_password) ;
-    Button _signupButton = (Button) findViewById(R.id.btn_signup) ;
-    TextView _loginLink =  (TextView) findViewById(R.id.link_login) ;
+    EditText _nameText;
+    EditText _emailText;
+    EditText _passwordText;
+    Button _signupButton;
+    TextView _loginLink;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        _nameText = (EditText) findViewById(R.id.input_name);
+        _emailText = (EditText) findViewById(R.id.input_email);
+        _passwordText = (EditText) findViewById(R.id.input_password);
+        _signupButton = (Button) findViewById(R.id.btn_signup);
+        _loginLink =  (TextView) findViewById(R.id.link_login);
 
         _signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,10 +49,11 @@ public class SignupActivity extends AppCompatActivity {
         _loginLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Finish the registration screen and return to the Login activity
-                finish();
+                startActivity(new Intent(SignupActivity.this, LoginActivity.class));
             }
         });
+
+
     }
 
     public void signup() {

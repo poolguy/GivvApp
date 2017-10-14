@@ -13,29 +13,35 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.macbookpro.givvapp.R;
+import com.example.macbookpro.givvapp.controller.employee.EmployeeMainActivity;
 
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
 
-
-    EditText _emailText = (EditText) findViewById(R.id.input_email);
-    EditText _passwordText = (EditText) findViewById(R.id.input_password);
-    Button _loginButton = (Button) findViewById(R.id.btn_login);
-    TextView _signupLink = (TextView) findViewById(R.id.link_signup);
+    EditText _emailText;
+    EditText _passwordText;
+    Button _loginButton;
+    TextView _signupLink;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        _emailText = (EditText) findViewById(R.id.input_email);
+        _passwordText = (EditText) findViewById(R.id.input_password);
+        _loginButton = (Button) findViewById(R.id.btn_login);
+        _signupLink = (TextView) findViewById(R.id.link_signup);
+
 
         _loginButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                login();
+//                login();
+                startActivity(new Intent(LoginActivity.this, EmployeeMainActivity.class));
             }
         });
 
