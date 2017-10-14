@@ -14,8 +14,12 @@ public class Project implements Parcelable{
 	private double amountEarned;
 	private String name;
 	private String description;
+	private String shortDescription;
+	private String headerImg;
+	private int headerResource;
 	private List<String> imgUrls;
 	private List<String> videoUrls;
+	private boolean isExpired;
 
 	public Project(double amountGoal, double amountEarned, String name, String description, List<String> imgUrls, List<String> videoUrls) {
 		this.amountGoal = amountGoal;
@@ -24,6 +28,18 @@ public class Project implements Parcelable{
 		this.description = description;
 		this.imgUrls = imgUrls;
 		this.videoUrls = videoUrls;
+	}
+
+	public Project(double amountGoal, double amountEarned, String name, String description, String shortDescription, int headerResource, List<String> imgUrls, List<String> videoUrls, boolean isExpired) {
+		this.amountGoal = amountGoal;
+		this.amountEarned = amountEarned;
+		this.name = name;
+		this.description = description;
+		this.shortDescription = shortDescription;
+		this.headerResource = headerResource;
+		this.imgUrls = imgUrls;
+		this.videoUrls = videoUrls;
+		this.isExpired = isExpired;
 	}
 
 	protected Project(Parcel in) {
@@ -93,6 +109,38 @@ public class Project implements Parcelable{
 
 	public void setVideoUrls(List<String> videoUrls) {
 		this.videoUrls = videoUrls;
+	}
+
+	public String getShortDescription() {
+		return shortDescription;
+	}
+
+	public void setShortDescription(String shortDescription) {
+		this.shortDescription = shortDescription;
+	}
+
+	public String getHeaderImg() {
+		return headerImg;
+	}
+
+	public void setHeaderImg(String headerImg) {
+		this.headerImg = headerImg;
+	}
+
+	public boolean isExpired() {
+		return isExpired;
+	}
+
+	public void setExpired(boolean expired) {
+		isExpired = expired;
+	}
+
+	public int getHeaderResource() {
+		return headerResource;
+	}
+
+	public void setHeaderResource(int headerResource) {
+		this.headerResource = headerResource;
 	}
 
 	@Override
