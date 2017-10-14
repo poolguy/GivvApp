@@ -1,11 +1,36 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarStyle">@style/Support.Toolbar</item>
+    </style>
+
+
+    <!-- toolbar styles -->
+    <style name="Support.Toolbar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:textColorHint">@color/colorPrimaryDark</item>
+        <item name="actionMenuTextColor">@color/white</item>
+    </style>
+
+    <style name="Support.Toolbar.Tabs" parent="Widget.AppCompat.Toolbar">
+        <item name="tabIndicatorColor">@color/colorPrimary</item>
+        <item name="tabIndicatorHeight">4dp</item>
+        <item name="tabBackground">@drawable/custom_ripple</item>
+        <item name="tabTextAppearance">@style/Support.Toolbar.Tabs.Text</item>
+        <item name="tabSelectedTextColor">@color/textDark</item>
+    </style>
+    <style name="Support.Toolbar.Tabs.Text" parent="Widget.AppCompat.ActionBar.TabText">
+        <item name="android:textColor">@color/textLight</item>
+    </style>
+
+    <style name="Support.Toolbar.Popup" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="loginButtonStyle">

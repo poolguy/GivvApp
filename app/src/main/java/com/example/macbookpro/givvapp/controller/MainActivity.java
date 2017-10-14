@@ -9,8 +9,9 @@ import com.example.macbookpro.givvapp.R;
 import com.example.macbookpro.givvapp.controller.admin.AdminMainActivity;
 import com.example.macbookpro.givvapp.controller.employee.EmployeeMainActivity;
 import com.example.macbookpro.givvapp.controller.employer.EmployerMainActivity;
+import com.example.macbookpro.givvapp.support.GivvActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends GivvActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

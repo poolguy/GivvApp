@@ -22,6 +22,10 @@
         </activity>
         <activity android:name=".controller.admin.AdminMainActivity">
         </activity>
+        <activity android:name=".controller.CompanyActivity">
+        </activity>
+        <activity android:name=".controller.admin.AddCompanyActivity">
+        </activity>
     </application>
 
 </manifest>
