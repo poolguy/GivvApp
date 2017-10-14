@@ -1,12 +1,15 @@
 package com.example.macbookpro.givvapp.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
 /**
  * Created by macbookpro on 10/14/17
  */
 
-public class Employee {
+public class Employee implements Parcelable{
 	private String id;
 	private String fName;
 	private String lName;
@@ -16,6 +19,40 @@ public class Employee {
 	private String password;
 	private List<Donation> donations;
 	double amountToDonate;
+
+	public Employee(String id, String fName, String lName, List<Project> pastProjects, Project currentProject, String email, String password, List<Donation> donations, double amountToDonate) {
+		this.id = id;
+		this.fName = fName;
+		this.lName = lName;
+		this.pastProjects = pastProjects;
+		this.currentProject = currentProject;
+		this.email = email;
+		this.password = password;
+		this.donations = donations;
+		this.amountToDonate = amountToDonate;
+	}
+
+	protected Employee(Parcel in) {
+		id = in.readString();
+		fName = in.readString();
+		lName = in.readString();
+		email = in.readString();
+		password = in.readString();
+		donations = in.createTypedArrayList(Donation.CREATOR);
+		amountToDonate = in.readDouble();
+	}
+
+	public static final Creator<Employee> CREATOR = new Creator<Employee>() {
+		@Override
+		public Employee createFromParcel(Parcel in) {
+			return new Employee(in);
+		}
+
+		@Override
+		public Employee[] newArray(int size) {
+			return new Employee[size];
+		}
+	};
 
 	public String getId() {
 		return id;
@@ -87,5 +124,21 @@ public class Employee {
 
 	public void setAmountToDonate(double amountToDonate) {
 		this.amountToDonate = amountToDonate;
+	}
+
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel parcel, int i) {
+		parcel.writeString(id);
+		parcel.writeString(fName);
+		parcel.writeString(lName);
+		parcel.writeString(email);
+		parcel.writeString(password);
+		parcel.writeTypedList(donations);
+		parcel.writeDouble(amountToDonate);
 	}
 }

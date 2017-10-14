@@ -15,4 +15,10 @@
         <item name="android:layout_margin">5dp</item>
     </style>
 
+    <!-- TabLayout style-->
+    <style name="ByuTabLayout" >
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
 </resources>

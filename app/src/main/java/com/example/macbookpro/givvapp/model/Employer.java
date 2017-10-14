@@ -1,12 +1,15 @@
 package com.example.macbookpro.givvapp.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
 /**
  * Created by macbookpro on 10/14/17
  */
 
-public class Employer {
+public class Employer implements Parcelable {
 	List<Employee> employees;
 	List<Project> currentProjects;
 	List<Project> pastProjects;
@@ -31,6 +34,27 @@ public class Employer {
 
 	public Employer() {
 	}
+
+	protected Employer(Parcel in) {
+		name = in.readString();
+		imgUrl = in.readString();
+		address = in.readString();
+		phoneNumber = in.readString();
+		email = in.readString();
+		id = in.readString();
+	}
+
+	public static final Creator<Employer> CREATOR = new Creator<Employer>() {
+		@Override
+		public Employer createFromParcel(Parcel in) {
+			return new Employer(in);
+		}
+
+		@Override
+		public Employer[] newArray(int size) {
+			return new Employer[size];
+		}
+	};
 
 	public List<Employee> getEmployees() {
 		return employees;
@@ -102,5 +126,20 @@ public class Employer {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel parcel, int i) {
+		parcel.writeString(name);
+		parcel.writeString(imgUrl);
+		parcel.writeString(address);
+		parcel.writeString(phoneNumber);
+		parcel.writeString(email);
+		parcel.writeString(id);
 	}
 }
